@@ -34,6 +34,7 @@ exports.registerUser = async (req, res) => {
 };
 
 
+
 // Login User
 exports.loginUser = async (req, res) => {
   try {
@@ -44,8 +45,7 @@ exports.loginUser = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: 'Invalid email or password' });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({ token, userId: user._id });
+    res.json({ userId: user._id });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

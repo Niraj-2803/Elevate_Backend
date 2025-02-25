@@ -26,7 +26,7 @@ const formDetailsSchema = new mongoose.Schema({
     aggregateType: String,
     aggregateValue: String
   },
-  twelfthStandard: {
+  twelthStandard: {
     institute: String,
     specialization: String,
     board: String,
