@@ -5,17 +5,17 @@ const formDetailsSchema = new mongoose.Schema({
   middleName: String,
   lastName: String,
   primaryPhone: String,
-  otherPhones: [String],
+  otherPhones: String,
   primaryEmail: String,
-  otherEmails: [String],
+  otherEmails: String,
   gender: String,
-  dateOfBirth: Date,
+  dateOfBirth: String,
   country: String,
   city: String,
   currentAddress: String,
   permanentAddress: String,
   profilePicture: String,
-  higherEducation: {
+  higherEducation: [{
     degree: String,
     specialization: String,
     collegeName: String,
@@ -25,22 +25,22 @@ const formDetailsSchema = new mongoose.Schema({
     studyMode: String,
     aggregateType: String,
     aggregateValue: String
-  },
-  twelthStandard: {
+  }],
+  twelfthStandard: [{
     institute: String,
     specialization: String,
     board: String,
     medium: String,
     aggregateType: String,
     aggregateValue: String
-  },
-  tenthStandard: {
+  }],
+  tenthStandard: [{
     institute: String,
     board: String,
     medium: String,
     aggregateType: String,
     aggregateValue: String
-  },
+  }],
   experiences: [
     {
       companyName: String,
@@ -64,22 +64,22 @@ const formDetailsSchema = new mongoose.Schema({
       link: String
     }
   ],
-  socialLinks: {
+  socialLinks: [{
     linkedin: String,
     portfolio: String,
     social: String,
     github: String
-  },
-  preferences: {
+  }],
+  preferences: [{
     jobLocation: String,
     salary: String,
     workSchedule: String
-  },
-  additionalInfo: {
+  }],
+  additionalInfo: [{
     languages: String,
     relocationWillingness: String,
     noticePeriod: String
-  },
+  }],
   backgroundCheckConsent: Boolean
 });
 
